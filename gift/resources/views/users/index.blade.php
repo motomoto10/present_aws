@@ -28,7 +28,7 @@
                         </div>
                     </div>
                         <div class="row justify-content-center">
-                          <input type="submit" class="col-6" value="検索する" data-disable-with="検索する" />
+                          {!! Form::submit('検索する', ['class' => 'btn col-6 btn-square-purple']) !!}
                         </div>
             {!! Form::close() !!}
         </div>
@@ -63,7 +63,7 @@
   
   <div class="container margin_30 category">
     <div class="main_title_3">
-      <h4><strong>人気のカテゴリー</strong></h4>
+      <h4 class="sub-category"><strong>人気のカテゴリー</strong></h4>
       <p>最近、見られているカテゴリーです。</p>
       {!! link_to_route('gifts.index', '全て見る', [], ['class' => '']) !!}
     </div>
@@ -123,7 +123,7 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="main_title_3">
-          <h4><strong>新着プレゼント</strong></h4>
+          <h4 class="sub-category"><strong>新着プレゼント</strong></h4>
           <p>最新のプレゼントです。新着順で表示されます。</p>
         </div>
         <div class="row">
@@ -139,7 +139,7 @@
 
       <div class="col-lg-6">
           <div class="main_title_3">
-            <h4><strong>人気トップ３</strong></h4>
+            <h4 class="sub-category"><strong>人気トップ３</strong></h4>
             <p>いいねの多いプレゼントはこちら。</p>
           </div>
           <div class="row">
