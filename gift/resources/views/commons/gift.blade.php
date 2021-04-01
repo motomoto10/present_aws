@@ -3,21 +3,23 @@
                 <div class="card-header">
                     <a href="/users/{{ $gift->user->id}}">
                         <div class="row">
-                    <img class="rounded img-fluid" src="/storage/profile_images/{{ $gift->user->id }}.jpg"width="40px" height="40px" alt="">
+                    <img class="rounded img-fluid" src="{{asset('img/user.svg')}}"width="40px" height="40px" alt="">
                     <span class="text-dark mx-2 my-auto">{{ $gift->user->name }}</span>
                         </div>
                     </a>
                 </div>
                 <div class="card-body">
-                    <p>贈ったもの</p>
-                    <p class="font-weight-bold">{!! ($gift->gift) !!}</p>
-                    <div>
-                    @if($gift->day)
-                    <p>贈った日</p>
-                    <p>{!! ($gift->day->format('Y年n月j日')) !!}</p>
-                    @endif
-                    <p>このプレゼントへの思い</p>
-                    <p>{!! nl2br($gift->explain) !!}</p>
+                      <div class="card-content">
+                        <p class="card-title font-weight-bold">{!! ($gift->gift) !!}</p>
+                        
+                        @if($gift->day)
+                        <p class="card-text"><i class="far fa-calendar-alt mr-2"></i>{!! ($gift->day->format('Y年n月j日')) !!}</p>
+                        @endif
+                        @if($gift->day)
+                        <p class="card-text">
+                        <i class="far fa-comment mr-2"></i>{!! nl2br($gift->explain) !!}
+                        </p>
+                        @endif
                     </div>
                 </div>
                 <div class="card-footer">
